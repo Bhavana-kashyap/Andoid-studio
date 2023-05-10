@@ -1,0 +1,49 @@
+package com.example.q9;
+
+import android.app.Fragment;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+
+import java.util.Random;
+
+public class FirstFragment extends Fragment {
+
+
+    View view;
+    Button firstButton;
+    TextView display;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+// Inflate the layout for this fragment
+        view = inflater.inflate(R.layout.fragment_first, container, false);
+// get the references of Button and textview
+        firstButton = (Button) view.findViewById(R.id.firstButton);
+        display=(TextView) view.findViewById(R.id.lala);
+// perform setOnClickListener on first Button
+        firstButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+// display a message by using a Toast
+                Toast.makeText(getActivity(), "Color changed", Toast.LENGTH_LONG).show();
+                TextColor();
+            }
+        });
+        return view;
+    }
+
+    private void TextColor(){
+        int [] color={Color.RED, Color.GREEN, Color.BLUE};
+        int RandomColor= color[new Random().nextInt(color.length)];
+        firstButton.setTextColor(RandomColor);
+        display.setTextColor(RandomColor);
+    }
+}

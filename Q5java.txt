@@ -1,0 +1,189 @@
+package com.example.q5;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        CheckBox Mango=findViewById(R.id.mango);
+        CheckBox Apple=findViewById(R.id.apple);
+        CheckBox Banana=findViewById(R.id.banana);
+        CheckBox Orange=findViewById(R.id.orange);
+        CheckBox Pineaple=findViewById(R.id.pineaple);
+
+        TextView Answer=findViewById(R.id.answer);
+
+
+
+
+
+        Mango.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                String answer="";
+                if(Mango.isChecked()){
+                    answer+=Mango.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Apple.isChecked()){
+                    answer+=Apple.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Banana.isChecked()){
+                    answer+=Banana.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Orange.isChecked()){
+                    answer+=Orange.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Pineaple.isChecked()){
+                    answer+=Pineaple.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+            }
+        });
+        Pineaple.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                String answer="";
+                if(Mango.isChecked()){
+                    answer+=Mango.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Apple.isChecked()){
+                    answer+=Apple.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Banana.isChecked()){
+                    answer+=Banana.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Orange.isChecked()){
+                    answer+=Orange.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Pineaple.isChecked()){
+                    answer+=Pineaple.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+            }
+        });
+        Banana.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                String answer="";
+                if(Mango.isChecked()){
+                    answer+=Mango.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Apple.isChecked()){
+                    answer+=Apple.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Banana.isChecked()){
+                    answer+=Banana.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Orange.isChecked()){
+                    answer+=Orange.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Pineaple.isChecked()){
+                    answer+=Pineaple.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+            }
+        });
+        Orange.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                String answer="";
+                if(Mango.isChecked()){
+                    answer+=Mango.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Apple.isChecked()){
+                    answer+=Apple.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Banana.isChecked()){
+                    answer+=Banana.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Orange.isChecked()){
+                    answer+=Orange.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Pineaple.isChecked()){
+                    answer+=Pineaple.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+            }
+        });
+        Apple.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                String answer="";
+                if(Mango.isChecked()){
+                    answer+=Mango.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Apple.isChecked()){
+                    answer+=Apple.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Banana.isChecked()){
+                    answer+=Banana.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Orange.isChecked()){
+                    answer+=Orange.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+                if(Pineaple.isChecked()){
+                    answer+=Pineaple.getText().toString()+"\n";
+                    Answer.setText(answer);
+                }
+            }
+        });
+    }
+}
+
+//        Submit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String answer="";
+//                if(Mango.isChecked()){
+//                    answer+=Mango.getText().toString()+"\n";
+//                    Answer.setText(answer);
+//                }
+//                if(Apple.isChecked()){
+//                    answer+=Apple.getText().toString()+"\n";
+//                    Answer.setText(answer);
+//                }
+//                if(Banana.isChecked()){
+//                    answer+=Banana.getText().toString()+"\n";
+//                    Answer.setText(answer);
+//                }
+//                if(Orange.isChecked()){
+//                    answer+=Orange.getText().toString()+"\n";
+//                    Answer.setText(answer);
+//                }
+//                if(Pineaple.isChecked()){
+//                    answer+=Pineaple.getText().toString()+"\n";
+//                    Answer.setText(answer);
+//                }
+//            }
+//        });

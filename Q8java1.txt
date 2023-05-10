@@ -1,0 +1,71 @@
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
+public class MainActivity extends AppCompatActivity {
+
+    private TextView activityLifecycleTextView;
+    private TextView fragmentLifecycleTextView;
+
+    private static final String TAG = MainActivity.class.getSimpleName();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        activityLifecycleTextView = findViewById(R.id.activityLifecycleTextView);
+        fragmentLifecycleTextView = findViewById(R.id.fragmentLifecycleTextView);
+
+        logMessage("Activity onCreate");
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragment = fragmentManager.findFragmentById(R.id.fragmentContainer);
+
+        if (fragment == null) {
+            fragment = new MyFragment();
+            fragmentManager.beginTransaction()
+                    .add(R.id.fragmentContainer, fragment)
+                    .commit();
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        logMessage("Activity onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        logMessage("Activity onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        logMessage("Activity onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        logMessage("Activity onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        logMessage("Activity onDestroy");
+    }
+
+    public void logMessage(String message) {
+        Log.d(TAG, message);
+        activityLifecycleTextView.append(message + "\n");
+    }
+}

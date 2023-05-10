@@ -1,0 +1,30 @@
+package com.example.q2_;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public void increment(View v){
+        TextView t=findViewById(R.id.textView);
+        int n=Integer.parseInt(t.getText().toString());
+        n++;
+        t.setText(Integer.toString(n));
+    }public void decrement(View v){
+        TextView t=findViewById(R.id.textView);
+        int n=Integer.parseInt(t.getText().toString());
+        n--;
+        t.setText(Integer.toString(n));
+    }public void reset(View v){
+        TextView t=findViewById(R.id.textView);
+        t.setText("0");
+    }
+}

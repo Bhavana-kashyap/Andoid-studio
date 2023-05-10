@@ -1,0 +1,46 @@
+package com.example.q9;
+
+import android.app.Fragment;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.Random;
+
+
+public class SecondFragment extends Fragment {
+
+    View view;
+    Button secondButton;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+// Inflate the layout for this fragment
+        view = inflater.inflate(R.layout.fragment_second, container, false);
+// get the reference of Button
+        secondButton = (Button) view.findViewById(R.id.secondButton);
+// perform setOnClickListener on second Button
+        secondButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //set background
+                SetBackground();
+                Toast.makeText(getActivity(),"Background changed",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        return view;
+    }
+    private void SetBackground() {
+        int[] colors = {Color.RED, Color.GREEN, Color.BLUE};
+        int randomColor = colors[new Random().nextInt(colors.length)];
+        view.setBackgroundColor(randomColor);
+    }
+}

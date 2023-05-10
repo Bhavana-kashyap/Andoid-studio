@@ -1,0 +1,57 @@
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+    private ImageView imageView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        imageView = findViewById(R.id.imageView);
+
+        Spinner spinner = findViewById(R.id.spinner);
+        spinner.setOnItemSelectedListener(this);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.spinner_items, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String selectedValue = parent.getItemAtPosition(position).toString();
+        Drawable drawable;
+        switch (selectedValue) {
+            case "Image 1":
+                drawable = getResources().getDrawable(R.drawable.image1);
+                break;
+            case "Image 2":
+                drawable = getResources().getDrawable(R.drawable.image2);
+                break;
+            case "Image 3":
+                drawable = getResources().getDrawable(R.drawable.image3);
+                break;
+            default:
+                drawable = null;
+                break;
+        }
+        imageView.setImageDrawable(drawable);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Do nothing
+    }
+}
+
